@@ -1,0 +1,518 @@
+<?php
+namespace WPA\Login;
+
+// Avoid that files are directly loaded
+if ( ! function_exists( 'add_action' ) ) :
+	exit(0);
+endif;
+
+class Settings_View
+{
+	public static function render_general()
+	{
+		$model = new Setting();
+
+		?>
+		<div class="wrap">
+			<form action="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>" data-component="form">
+				<!-- header da tabela -->
+				<div class="tab">
+					<span class="tablinks active" onclick="openTab(event, 'tab1')">Form Style</span>
+					<span class="tablinks" onclick="openTab(event, 'tab2')">Class Grid</span>
+					<span class="tablinks" onclick="openTab(event, 'tab3')">Example Themes</span>
+				</div>
+
+				<!-- Items da tabela -->
+				<div id="tab1" class="tabcontent" style="display: block;">
+					<div class="table-items">
+						<table class="form-table">
+							<thead class="header-table">
+								<tr>
+									<th colspan="6">
+										<h1>Configuration Manager - Gravity Custom Style </h1>
+									</th>
+								</tr>
+							</thead>
+
+							<tbody id="base" class="box-element">
+								<tr>
+									<td rowspan="2" class="title">Base</td>
+									<td><label for="wpal-field-base"><?php _e( 'Color Base', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="wpal-field-border"><?php _e( 'Color Border', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="wpal-field-checked"><?php _e( 'Color Checkbox and Radio', App::PLUGIN_SLUG ); ?></label></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										<input data-component="color-picker"
+										data-default-color="#7f6fce"
+										type="text" id="wpal-field-base"
+										name="<?php echo Setting::OPTION_COLOR_BASE; ?>"
+										value="<?php echo esc_html( $model->base ); ?>">
+									</td>
+									<td>
+										<input data-component="color-picker"
+										data-default-color="#7f6fce"
+										type="text" id="wpal-field-border"
+										name="<?php echo Setting::OPTION_COLOR_BORDER; ?>"
+										value="<?php echo esc_html( $model->border ); ?>">
+									</td>
+									<td>
+										<input data-component="color-picker"
+										data-default-color="#7f6fce"
+										type="text" id="wpal-field-checked"
+										name="<?php echo Setting::OPTION_COLOR_CHECKED; ?>"
+										value="<?php echo esc_html( $model->checked ); ?>">
+									</td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+
+							<tbody id="Text" class="box-element">
+								<tr>
+									<td rowspan="2" class="title">Text</td>
+									<td><label for="wpal-field-label"><?php _e( 'Color Title', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="wpal-field-placeholder"><?php _e( 'Color Placeholder', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="wpal-field-text"><?php _e( 'Color Text', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="wpal-field-font-size"><?php _e( 'Font Size', App::PLUGIN_SLUG ); ?></label></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										<input data-component="color-picker"
+										data-default-color="#525252"
+										type="text" id="wpal-field-label"
+										name="<?php echo Setting::OPTION_COLOR_LABEL; ?>"
+										value="<?php echo esc_html( $model->label ); ?>">
+									</td>
+									<td>
+										<input data-component="color-picker"
+										data-default-color="#666666"
+										type="text" id="wpal-field-placeholder"
+										name="<?php echo Setting::OPTION_COLOR_PLACEHOLDER; ?>"
+										value="<?php echo esc_html( $model->placeholder ); ?>">
+									</td>
+									<td>
+										<input data-component="color-picker"
+										data-default-color="#595959"
+										type="text" id="wpal-field-text"
+										name="<?php echo Setting::OPTION_COLOR_TEXT; ?>"
+										value="<?php echo esc_html( $model->text ); ?>">
+									</td>
+									<td>
+										<input type="number" id="wpal-field-font-size"
+										name="<?php echo Setting::OPTION_FONT_SIZE; ?>"
+										value="<?php echo intval( $model->font_size ); ?>">
+										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
+									</td>
+									<td></td>
+								</tr>
+							</tbody>
+
+							<tbody id="input" class="box-element">
+								<tr>
+									<td rowspan="2" class="title">Input</td>
+									<td><label for="wpal-field-input"><?php _e( 'Color Background Input', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="wpal-field-input_error"><?php _e( 'Color Background Input Error', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="wpal-field-focus"><?php _e( 'Color Focus Input', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="wpal-field-input-size"><?php _e( 'Input Size', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="wpal-field-textarea-size"><?php _e( 'Textarea Size', App::PLUGIN_SLUG ); ?></label></td>
+								</tr>
+								<tr>
+									<td>
+										<input data-component="color-picker"
+										data-default-color="#f9f9f9"
+										type="text" id="wpal-field-input"
+										name="<?php echo Setting::OPTION_COLOR_INPUT; ?>"
+										value="<?php echo esc_html( $model->input ); ?>">
+									</td>
+									<td>
+										<input data-component="color-picker"
+										data-default-color="#ffeeee"
+										type="text" id="wpal-field-input-error"
+										name="<?php echo Setting::OPTION_COLOR_INPUT_ERROR; ?>"
+										value="<?php echo esc_html( $model->input_error ); ?>">
+									</td>
+									<td>
+										<input data-component="color-picker"
+										data-default-color="#18e0c4"
+										type="text" id="wpal-field-focus"
+										name="<?php echo Setting::OPTION_COLOR_FOCUS; ?>"
+										value="<?php echo esc_html( $model->focus ); ?>">
+									</td>
+									<td>
+										<input type="number" id="wpal-field-input-size"
+										name="<?php echo Setting::OPTION_INPUT_SIZE; ?>"
+										value="<?php echo intval( $model->input_size ); ?>">
+										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
+									</td>
+									<td>
+										<input type="number" id="wpal-field-textarea-size"
+										name="<?php echo Setting::OPTION_TEXTAREA_SIZE; ?>"
+										value="<?php echo intval( $model->textarea_size ); ?>">
+										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
+									</td>
+								</tr>
+							</tbody>
+
+							<tbody id="btn" class="box-element">
+								<tr>
+									<td rowspan="3" class="title">Button</td>
+									<td><label for="wpal-field-btn_back"><?php _e( 'Color Button Background', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="wpal-field-btn_text"><?php _e( 'Color Button Text', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="wpal-field-btn_back_hover"><?php _e( 'Color Button Backgound Hover', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="wpal-field-btn_text_hover"><?php _e( 'Color Button Text Hover', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="wpal-field-font-size-btn"><?php _e( 'Font Size Button', App::PLUGIN_SLUG ); ?></label></td>
+								</tr>
+								<tr>
+									<td>
+										<input data-component="color-picker"
+										data-default-color="#7f6fce"
+										type="text" id="wpal-field-btn-back"
+										name="<?php echo Setting::OPTION_COLOR_BTN_BACK; ?>"
+										value="<?php echo esc_html( $model->btn_back ); ?>">
+									</td>
+									<td>
+										<input data-component="color-picker"
+										data-default-color="#ffffff"
+										type="text" id="wpal-field-btn-text"
+										name="<?php echo Setting::OPTION_COLOR_BTN_TEXT; ?>"
+										value="<?php echo esc_html( $model->btn_text ); ?>">
+									</td>
+									<td>
+										<input data-component="color-picker"
+										data-default-color="#ededed"
+										type="text" id="wpal-field-btn-back-hover"
+										name="<?php echo Setting::OPTION_COLOR_BTN_BACK_HOVER; ?>"
+										value="<?php echo esc_html( $model->btn_back_hover ); ?>">
+									</td>
+									<td>
+										<input data-component="color-picker"
+										data-default-color="#7f6fce"
+										type="text" id="wpal-field-btn-text-hover"
+										name="<?php echo Setting::OPTION_COLOR_BTN_TEXT_HOVER; ?>"
+										value="<?php echo esc_html( $model->btn_text_hover ); ?>">
+									</td>
+									<td>
+										<input type="number" id="wpal-field-font-size-btn"
+										name="<?php echo Setting::OPTION_FONT_SIZE_BTN; ?>"
+										value="<?php echo intval( $model->font_size_btn ); ?>">
+										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
+									</td>
+								</tr>
+							</tbody>
+
+							<tbody id="border" class="box-element">
+								<tr>
+									<td rowspan="2" class="title">Border</td>
+									<td><label for="wpal-field-border-size"><?php _e( 'Border Size', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="wpal-field-border-radius"><?php _e( 'Border Radius', App::PLUGIN_SLUG ); ?></label></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										<input type="number" id="wpal-field-border-size"
+										name="<?php echo Setting::OPTION_BORDER_SIZE; ?>"
+										value="<?php echo intval( $model->border_size ); ?>">
+										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
+									</td>
+									<td>
+										<input type="number" id="wpal-field-border-radius"
+										name="<?php echo Setting::OPTION_BORDER_RADIUS; ?>"
+										value="<?php echo intval( $model->border_radius ); ?>">
+										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
+									</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+
+							<tbody id="validation" class="box-element">
+								<tr>
+									<td rowspan="2" class="title">Validation</td>
+									<td><label for="wpal-field-success"><?php _e( 'Color Message Success', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="wpal-field-error"><?php _e( 'Color Error Message', App::PLUGIN_SLUG ); ?></label></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										<input data-component="color-picker"
+										data-default-color="#009d47"
+										type="text" id="wpal-field-success"
+										name="<?php echo Setting::OPTION_COLOR_SUCCESS; ?>"
+										value="<?php echo esc_html( $model->success ); ?>">
+									</td>
+									<td>
+										<input data-component="color-picker"
+										data-default-color="#eb0c0c"
+										type="text" id="wpal-field-error"
+										name="<?php echo Setting::OPTION_COLOR_ERROR; ?>"
+										value="<?php echo esc_html( $model->error ); ?>">
+									</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div id="tab2" class="tabcontent" style="display: none;">
+					<div class="table-items">
+					</div>
+				</div>
+
+				<div id="tab3" class="tabcontent" style="display: none;">
+					<div class="table-items">
+					</div>
+				</div>
+
+				<script>
+					function openTab(evt, tabName) {
+						var i, tabcontent, tablinks;
+						tabcontent = document.getElementsByClassName("tabcontent");
+						for (i = 0; i < tabcontent.length; i++) {
+							tabcontent[i].style.display = "none";
+						}
+						tablinks = document.getElementsByClassName("tablinks");
+						for (i = 0; i < tablinks.length; i++) {
+							tablinks[i].className = tablinks[i].className.replace(" active", "");
+						}
+						document.getElementById(tabName).style.display = "block";
+						evt.currentTarget.className += " active";
+					}
+				</script>
+
+				<p class="submit">
+					<?php
+						wp_nonce_field(
+							Setting::NONCE_GENERAL_ACTION,
+							Setting::NONCE_GENERAL_NAME
+						);
+					?>
+
+					<input type="hidden" name="action" value="general_save_settings">
+					<input type="submit" class="button button-primary" value="<?php echo esc_attr_e( 'Save', App::PLUGIN_SLUG ); ?>" data-element="submit">
+				</p>
+			</form>
+		</div>
+		<?php
+	}
+
+	public static function render_config_css_inline()
+	{
+		$model			= new Setting();
+		$base			= htmlentities( $model->base );
+		// $background		= htmlentities( $model->background );
+		$border			= htmlentities( $model->border );
+		$btn_back		= htmlentities( $model->btn_back );
+		$btn_text		= htmlentities( $model->btn_text );
+		$btn_back_hover	= htmlentities( $model->btn_back_hover );
+		$btn_text_hover	= htmlentities( $model->btn_text_hover );
+		$checked		= htmlentities( $model->checked );
+		$error			= htmlentities( $model->error );
+		$focus			= htmlentities( $model->focus );
+		// $hover			= htmlentities( $model->hover );
+		$input			= htmlentities( $model->input );
+		$input_error	= htmlentities( $model->input_error );
+		$label			= htmlentities( $model->label );
+		$placeholder	= htmlentities( $model->placeholder );
+		$text			= htmlentities( $model->text );
+		$success		= htmlentities( $model->success );
+		$border_size	= htmlentities( $model->border_size );
+		$input_size		= htmlentities( $model->input_size );
+		$textarea_size	= htmlentities( $model->textarea_size );
+		$border_radius	= htmlentities( $model->border_radius );
+		$font_size		= htmlentities( $model->font_size );
+		$font_size_btn	= htmlentities( $model->font_size_btn );
+
+		echo "
+		<style type=\"text/css\">
+			.gcs-form .gfield_radio li label,
+			.gcs-form .gfield_checkbox li label {
+				color: {$text} !important;
+			}
+			.gcs-form .col .gfield_label {
+				color: {$label} !important;
+			}
+			.gcs-form input[type='checkbox']:after {
+				background-color: {$input} !important;
+			}
+			.gcs-form input[type='checkbox']:checked:after {
+				background-color: {$checked} !important;
+			}
+			.gcs-form input[type='radio']:after {
+				background-color: {$input} !important;
+			}
+			.gcs-form input[type='radio']:checked:after {
+				background-color: {$checked} !important;
+				border-color: {$border} !important;
+			}
+			.col select,
+			.col textarea,
+			.col input {
+				background: {$input} !important;
+				border-radius: {$border_radius}px !important;
+				color: {$text} !important;
+				font-size: {$font_size}px !important;
+			}
+			.col select:focus,
+			.col textarea:focus,
+			.col input:focus {
+				box-shadow: 0px 0px 5px 0px {$focus} !important;
+			}
+			.col select,
+			.col input {
+				height: {$input_size}px !important;
+			}
+			.col textarea {
+				height: {$textarea_size}px !important;
+			}
+			.col .gfield_label {
+				font-size: {$font_size}px !important;
+			}
+			.gcs-form.beta select,
+			.gcs-form.beta textarea,
+			.gcs-form.beta input {
+				border-bottom: {$border_size}px solid {$border} !important;
+			}
+			.gcs-form.beta select:focus,
+			.gcs-form.beta textarea:focus,
+			.gcs-form.beta input:focus {
+				box-shadow: none!important;
+				border-bottom-color: {$focus} !important;
+			}
+			.gcs-form.alfa select,
+			.gcs-form.alfa textarea,
+			.gcs-form.alfa input {
+				border-radius: {$border_radius}px !important;
+				border-width: {$border_size}px !important;
+				border-color: {$border} !important;
+			}
+			.gcs-form.alfa select:focus,
+			.gcs-form.alfa textarea:focus,
+			.gcs-form.alfa input:focus {
+				border-color: {$focus} !important;
+			}
+			.gcs-form.alfa input[type='checkbox']:after,
+			.gcs-form.alfa input[type='checkbox']:checked:after,
+			.gcs-form.alfa input[type='radio']:after,
+			.gcs-form.alfa input[type='radio']:checked:after {
+				border-width: {$border_size}px !important;
+				border-color: {$border} !important;
+			}
+			.gcs-form.alfa .gform_button {
+				color: {$btn_text} !important;
+				background: {$btn_back} !important;
+			}
+			.gcs-form.alfa .gform_button:hover {
+				background: {$btn_back_hover} !important;
+			}
+			.ui-datepicker {
+				background: {$input} !important;
+			}
+			.ui-datepicker-header {
+				background: {$base} !important;
+			}
+			.ui-datepicker-calendar th span {
+				color: {$base} !important;
+			}
+			.ui-datepicker-calendar td:hover {
+				background: {$input} !important;
+			}
+			.gcs-form .gform_button {
+				background: {$btn_back} !important;
+				border-radius: {$border_radius}px !important;
+				color: {$btn_text} !important;
+				font-size: {$font_size_btn}px !important;
+			}
+			.gcs-form .gform_button:hover {
+				background: {$btn_back_hover} !important;
+				color: {$btn_text_hover} !important;
+			}
+			.gform_wrapper .gfield_error input,
+			.gform_wrapper .gfield_error select,
+			.gform_wrapper .gfield_error textarea {
+				background: {$input_error} !important;
+			}
+			.validation_error {
+				background: {$error} !important;
+				border-radius: {$border_radius}px !important;
+			}
+			.gfield_description.validation_message {
+				color: {$error} !important;
+			}
+			.gform_confirmation_wrapper .gform_confirmation_message {
+				background: {$success} !important;
+				border-radius: {$border_radius}px !important;
+				font-size: {$font_size}px !important;
+			}
+			.gcs-form .gfield_error input[type='radio']:after,
+			.gcs-form .gfield_error input[type='checkbox']:after {
+				background: {$error} !important;
+			}
+			.gcs-form .gfield_error input[type='radio']:checked:after,
+			.gcs-form .gfield_error input[type='checkbox']:checked:after {
+				background: {$checked} !important;
+			}
+			.gcs-form.beta .gfield_error input,
+			.gcs-form.beta .gfield_error select,
+			.gcs-form.beta .gfield_error textarea {
+				background: {$input} !important;
+				border-bottom: {$border_size}px solid {$error} !important;
+			}
+			.gcs-form.beta .gfield_error input[type='radio']:after,
+			.gcs-form.beta .gfield_error input[type='checkbox']:after {
+				border-color: {$error} !important;
+				background: {$input} !important;
+			}
+			.gcs-form.beta .gfield_error input[type='radio']:checked:after,
+			.gcs-form.beta .gfield_error input[type='checkbox']:checked:after {
+				background: {$checked} !important;
+			}
+			.gcs-form.alfa .gfield_error input,
+			.gcs-form.alfa .gfield_error select,
+			.gcs-form.alfa .gfield_error textarea {
+				background: {$input} !important;
+				border-color: {$error} !important;
+			}
+			.gcs-form.alfa .gfield_error input[type='radio']:after,
+			.gcs-form.alfa .gfield_error input[type='checkbox']:after {
+				border-color: {$error} !important;
+				background: {$input} !important;
+			}
+			.gcs-form.alfa .gfield_error input[type='radio']:checked:after,
+			.gcs-form.alfa .gfield_error input[type='checkbox']:checked:after {
+				background: {$checked} !important;
+			}
+			.gcs-form ::-webkit-input-placeholder {
+				color: {$placeholder} !important;
+			}
+			.gcs-form ::-moz-placeholder {
+				color: {$placeholder} !important;
+			}
+			.gcs-form :-ms-input-placeholder {
+				color: {$placeholder} !important;
+			}
+			.gcs-form :-moz-placeholder {
+				color: {$placeholder} !important;
+			}
+			.gcs-form .gform_wrapper .gf_progressbar {
+				background: {$base} !important;
+			}
+
+			.gcs-form ::-webkit-input-placeholder {
+				color: {$placeholder} !important;
+			}
+		</style>
+		";
+	}
+}

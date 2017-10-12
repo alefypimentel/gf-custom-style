@@ -1,0 +1,117 @@
+.wp-color-picker {
+	width: 70px;
+	position: relative;
+}
+
+.wp-picker-default {
+	font-size: 13px !important;
+	line-height: 26px !important;
+	height: 28px !important;
+	padding: 0 10px 1px !important;
+}
+
+.wp-color-result {
+	// border: 1px solid #000;
+    cursor: pointer;
+    height: 27px;
+    margin: 0;
+    position: relative;
+    user-select: none;
+    vertical-align: bottom;
+    display: inline-block;
+	padding-left: 30px;
+	box-shadow: 0px 0px 8px -2px #000;
+    border-radius: 3px;
+}
+
+.wp-color-result:after {
+	background: #ffffff;
+    color: #2d3f50;
+    // border-left: 1px solid #2d3f50;
+    content: attr(title);
+    display: block;
+    padding: 0 6px;
+    position: relative;
+    right: 0;
+    text-align: center;
+    top: 0;
+    height: 27px;
+    font-size: 13px;
+	line-height: 26px;
+    border-radius: 0 3px 3px 0;
+}
+
+.wp-color-result:hover {
+	background: #fafafa;
+	// border-color: #222;
+	color: #222;
+	box-shadow: 0px 0px 10px -1px #222;
+}
+
+.wp-color-result:hover:after {
+	color: #222;
+	border-color: #222;
+	// border-left: 1px solid #222;
+}
+
+.wp-color-result {
+	top: 0;
+}
+
+.wp-color-result.wp-picker-open:after {
+	content: attr( data-current );
+}
+
+.wp-picker-container, .wp-picker-container:active {
+	display: inline-block;
+	outline: 0;
+}
+
+.wp-color-result:focus {
+	border-color: #888;
+	-webkit-box-shadow: 0 1px 2px rgba( 0, 0, 0, 0.2 );
+	box-shadow: 0 1px 2px rgba( 0, 0, 0, 0.2 );
+}
+
+.wp-color-result:focus:after {
+	border-color: #888;
+}
+
+.wp-picker-open + .wp-picker-input-wrap {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.wp-picker-container .button {
+	margin-left: 6px;
+}
+
+.wp-picker-container .iris-square-slider .ui-slider-handle:focus {
+	background-color: #555
+}
+
+.wp-picker-container .iris-picker {
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	border-color: #dfdfdf;
+	margin-top: 6px;
+	position: absolute;
+	z-index: 1;
+}
+
+.wp-picker-container input[type="text"].wp-color-picker:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
+.wp-picker-container input[type="text"].wp-color-picker:-moz-placeholder {
+	color: #999;
+}
+
+.wp-picker-container input[type="text"].iris-error {
+	background-color: #ffebe8;
+	border-color: #c00;
+	color: #000;
+}
+/*
+ * End WP Color Picker
+ */
