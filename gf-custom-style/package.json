@@ -1,7 +1,7 @@
 {
-  "name": "gravity-custom-style",
+  "name": "gf-custom-style",
   "version": "0.1.0",
-  "description": "Gravity Custom Style",
+  "description": "GF Custom Style",
   "webroot" : "assets/javascripts",
   "stylesheetroot" :"assets/stylesheets",
   "repository": {

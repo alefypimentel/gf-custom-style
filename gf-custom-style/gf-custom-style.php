@@ -1,11 +1,11 @@
 <?php
 /*
-	Plugin Name: Gravity Custom Style
+	Plugin Name: GF Custom Style
 	Plugin URI: https://github.com/alefypimentel
 	Author: Alefy Pimentel Ferreira
 	Version: 1.0
 	Description: Customize gravity forms plugin, colors, inputs... style.
-	Text Domain: gravity-custom-style
+	Text Domain: gf-custom-style
 	Domain Path: /languages
 */
 
@@ -18,9 +18,9 @@ endif;
 
 class App
 {
-	const PLUGIN_NAME = 'Gravity Custom Style';
+	const PLUGIN_NAME = 'GF Custom Style';
 
-	const PLUGIN_SLUG = 'gravity-custom-style';
+	const PLUGIN_SLUG = 'gf-custom-style';
 
 	public static function uses( $class_name, $location )
 	{

@@ -29,7 +29,7 @@ class Settings_View
 							<thead class="header-table">
 								<tr>
 									<th colspan="6">
-										<h1>Configuration Manager - Gravity Custom Style </h1>
+										<h1>Configuration Manager - GF Custom Style </h1>
 									</th>
 								</tr>
 							</thead>

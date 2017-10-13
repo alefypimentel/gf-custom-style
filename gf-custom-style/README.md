@@ -1,4 +1,4 @@
-# Gravity Custom Style
+# GF Custom Style
 If you want to change the login form style, this plugin is for you!
 
 ## Contributing

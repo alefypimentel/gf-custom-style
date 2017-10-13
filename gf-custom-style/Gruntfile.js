@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 	var config = {
-		package : grunt.file.readJSON( 'package.json' ),		
+		package : grunt.file.readJSON( 'package.json' ),
 
   		concat : {
 		    options : {
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
 					style: 'compressed'
 				},
 		    	files: {
-		    		'login.style.css' : '<%= package.stylesheetroot %>/login/style.scss',
+		    		'gf-custom.style.css' : '<%= package.stylesheetroot %>/custom/style.scss',
 		    		'admin.style.css' : '<%= package.stylesheetroot %>/admin/style.scss'
 		    	}
 		    },
