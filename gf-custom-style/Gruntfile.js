@@ -47,7 +47,7 @@ module.exports = function(grunt) {
 					style: 'compressed'
 				},
 		    	files: {
-		    		'gf-custom.style.css' : '<%= package.stylesheetroot %>/custom/style.scss',
+		    		'login.style.css' : '<%= package.stylesheetroot %>/login/style.scss',
 		    		'admin.style.css' : '<%= package.stylesheetroot %>/admin/style.scss'
 		    	}
 		    },
