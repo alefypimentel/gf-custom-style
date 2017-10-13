@@ -200,6 +200,10 @@
 	display: inline-block!important;
 	padding: 10px!important;
 	background: #fff!important;
+
+	thead th {
+		text-align: center!important;
+	}
 }
 .ui-datepicker-calendar tr {
 	border: none!important;
@@ -248,6 +252,7 @@
 	padding: 12px 35px;
 	-webkit-transition: .2s ease-in-out;
 	transition: .2s ease-in-out;
+	width: auto!important;
 }
 /* Configuração de erro */
 .validation_error {
