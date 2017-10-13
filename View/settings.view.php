@@ -267,6 +267,9 @@ class Settings_View
 
 				<div id="tab2" class="tabcontent" style="display: none;">
 					<div class="table-items">
+						<?php
+							echo '<img src="' . plugins_url( 'images/grid.png', dirname(__FILE__) ) . '" > ';
+						?>
 					</div>
 				</div>
 

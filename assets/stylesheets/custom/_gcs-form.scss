@@ -66,48 +66,48 @@
 	transform: translate(-50%,-50%);
 }
 /* Componentes formulário */
-.col {
+.gcs-form .col {
 	float: left;
 }
-.col select,
-.col textarea,
-.col input {
+.gcs-form .col select,
+.gcs-form .col textarea,
+.gcs-form .col input {
 	border: none;
 	padding: 10px;
 	width: 100%;
 }
-.col input[type="checkbox"],
-.col input[type="radio"] {
+.gcs-form .col input[type="checkbox"],
+.gcs-form .col input[type="radio"] {
 	position: relative;
 }
-.col input[type="checkbox"] {
+.gcs-form .col input[type="checkbox"] {
 	height: auto!important;
 	width: auto!important;
 	-webkit-appearance: checkbox;
 }
-.col input[type="file"] {
+.gcs-form .col input[type="file"] {
 	-webkit-appearance: inherit;
 }
-.col .name_first,
-.col .name_last,
-.col .ginput_left,
-.col .ginput_right {
+.gcs-form .col .name_first,
+.gcs-form .col .name_last,
+.gcs-form .col .ginput_left,
+.gcs-form .col .ginput_right {
 	float: left;
 	width: 48%;
 }
-.col .ginput_right,
-.col .name_last {
+.gcs-form .col .ginput_right,
+.gcs-form .col .name_last {
 	margin-left: 4%;
 }
-.col .gfield_label {
+.gcs-form .col .gfield_label {
 	display: -webkit-inline-box;
 	padding-bottom: 5px;
 	text-transform: initial;
 }
-.col .ginput_container_date {
+.gcs-form .col .ginput_container_date {
 	position: relative;
 }
-.col .ginput_container_date img {
+.gcs-form .col .ginput_container_date img {
 	position: absolute;
 	right: 5px;
 	top: 50%;
@@ -143,95 +143,94 @@
 .gcs-form.alfa input[type="radio"]:checked:after {
 	border-style: solid;
 }
-.w1 {
+.gcs-form .w1 {
 	clear: both;
 	margin-left: 0;
 	width: 100%;
 }
 
-.w2 {
+.gcs-form .w2 {
 	margin-left: 4%;
 	width: 48%;
 }
 
-.w3 {
+.gcs-form .w3 {
 	margin-left: 2%;
 	width: 32%;
 }
 
-.w4 {
+.gcs-form .w4 {
 	margin-left: 2%;
 	width: 23.5%;
 }
 
-.w4-2 {
+.gcs-form .w4-2 {
 	margin-left: 2%;
 	width: 24%;
 }
 
-.w-clear {
+.gcs-form .w-clear {
 	clear: both;
 	margin-left: 0;
 }
 
-.no-label .gfield_label {
+.gcs-form .no-label .gfield_label {
 	display: none;
 }
 
 @media (max-width: 600px) {
-.w2,
-.w3,
-.w4,
-.w4-2,
-.col .name_first,
-.col .name_last,
-.col .ginput_left,
-.col .ginput_right {
+.gcs-form .w2,
+.gcs-form .w3,
+.gcs-form .w4,
+.gcs-form .w4-2,
+.gcs-form .col .name_first,
+.gcs-form .col .name_last,
+.gcs-form .col .ginput_left,
+.gcs-form .col .ginput_right {
 	margin: 0;
 	width: 100%;
 }
 }
 /* Calendário */
 .ui-datepicker-header {
-	padding: 5px 20px;
-	text-align: center;
+	padding: 5px 20px!important;
+	text-align: center!important;
 }
 .ui-datepicker-calendar {
-	display: inline-block;
-	padding: 10px;
-	background: #fff;
+	display: inline-block!important;
+	padding: 10px!important;
+	background: #fff!important;
 }
 .ui-datepicker-calendar tr {
-	border: none;
+	border: none!important;
 }
 .ui-datepicker-calendar th span {
-    font-weight: 900;
+    font-weight: 900!important;
 }
 .ui-datepicker-prev,
 .ui-datepicker-next {
-	display: none;
+	display: none!important;
 }
 .ui-datepicker-title {
-	display: inline-block;
-	padding: 5px 0;
-	width: 100%;
+	display: inline-block!important;
+	padding: 5px 0!important;
+	width: 100%!important;
 }
 .ui-datepicker-title select {
-	margin: 0 2%;
-	width: 46%;
-	border: none;
+	margin: 0 2%!important;
+	width: 46%!important;
+	border: none!important;
 }
 .ui-datepicker-calendar td {
-	padding: 8px;
-	text-align: center;
-	transition: .3s ease-in-out;
+	padding: 8px!important;
+	text-align: center!important;
+	transition: .3s ease-in-out!important;
 }
 .ui-datepicker-calendar td a {
-	color: #000;
-	text-decoration: none;
-	padding: 8px;
+	color: #000!important;
+	text-decoration: none!important;
+	padding: 8px!important;
 }
-
 /* Botão enviar */
 .gcs-form .gform_footer {
 	float: right;
