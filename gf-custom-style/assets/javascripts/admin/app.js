@@ -6,7 +6,7 @@ jQuery(function($) {
 		init : function() {
 
 		},
-		'appearance_page_wpal-settings-theme' : function() {
+		'appearance_page_gcs-settings-theme' : function() {
 			var form   = new ComponentForm( $( '[data-component="form"]' ) )
 			  , upload = new ComponentUpload( $( '[data-component="upload"]' ) )
 			;

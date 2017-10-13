@@ -1,5 +1,5 @@
 <?php
-namespace WPA\Login;
+namespace GCS\Custom;
 
 // Avoid that files are directly loaded
 if ( ! function_exists( 'add_action' ) ) :
@@ -37,9 +37,9 @@ class Settings_View
 							<tbody id="base" class="box-element">
 								<tr>
 									<td rowspan="2" class="title">Base</td>
-									<td><label for="wpal-field-base"><?php _e( 'Color Base', App::PLUGIN_SLUG ); ?></label></td>
-									<td><label for="wpal-field-border"><?php _e( 'Color Border', App::PLUGIN_SLUG ); ?></label></td>
-									<td><label for="wpal-field-checked"><?php _e( 'Color Checkbox and Radio', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-base"><?php _e( 'Color Base', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-border"><?php _e( 'Color Border', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-checked"><?php _e( 'Color Checkbox and Radio', App::PLUGIN_SLUG ); ?></label></td>
 									<td></td>
 									<td></td>
 								</tr>
@@ -47,21 +47,21 @@ class Settings_View
 									<td>
 										<input data-component="color-picker"
 										data-default-color="#7f6fce"
-										type="text" id="wpal-field-base"
+										type="text" id="gcs-field-base"
 										name="<?php echo Setting::OPTION_COLOR_BASE; ?>"
 										value="<?php echo esc_html( $model->base ); ?>">
 									</td>
 									<td>
 										<input data-component="color-picker"
 										data-default-color="#7f6fce"
-										type="text" id="wpal-field-border"
+										type="text" id="gcs-field-border"
 										name="<?php echo Setting::OPTION_COLOR_BORDER; ?>"
 										value="<?php echo esc_html( $model->border ); ?>">
 									</td>
 									<td>
 										<input data-component="color-picker"
 										data-default-color="#7f6fce"
-										type="text" id="wpal-field-checked"
+										type="text" id="gcs-field-checked"
 										name="<?php echo Setting::OPTION_COLOR_CHECKED; ?>"
 										value="<?php echo esc_html( $model->checked ); ?>">
 									</td>
@@ -73,36 +73,36 @@ class Settings_View
 							<tbody id="Text" class="box-element">
 								<tr>
 									<td rowspan="2" class="title">Text</td>
-									<td><label for="wpal-field-label"><?php _e( 'Color Title', App::PLUGIN_SLUG ); ?></label></td>
-									<td><label for="wpal-field-placeholder"><?php _e( 'Color Placeholder', App::PLUGIN_SLUG ); ?></label></td>
-									<td><label for="wpal-field-text"><?php _e( 'Color Text', App::PLUGIN_SLUG ); ?></label></td>
-									<td><label for="wpal-field-font-size"><?php _e( 'Font Size', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-label"><?php _e( 'Color Title', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-placeholder"><?php _e( 'Color Placeholder', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-text"><?php _e( 'Color Text', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-font-size"><?php _e( 'Font Size', App::PLUGIN_SLUG ); ?></label></td>
 									<td></td>
 								</tr>
 								<tr>
 									<td>
 										<input data-component="color-picker"
 										data-default-color="#525252"
-										type="text" id="wpal-field-label"
+										type="text" id="gcs-field-label"
 										name="<?php echo Setting::OPTION_COLOR_LABEL; ?>"
 										value="<?php echo esc_html( $model->label ); ?>">
 									</td>
 									<td>
 										<input data-component="color-picker"
 										data-default-color="#666666"
-										type="text" id="wpal-field-placeholder"
+										type="text" id="gcs-field-placeholder"
 										name="<?php echo Setting::OPTION_COLOR_PLACEHOLDER; ?>"
 										value="<?php echo esc_html( $model->placeholder ); ?>">
 									</td>
 									<td>
 										<input data-component="color-picker"
 										data-default-color="#595959"
-										type="text" id="wpal-field-text"
+										type="text" id="gcs-field-text"
 										name="<?php echo Setting::OPTION_COLOR_TEXT; ?>"
 										value="<?php echo esc_html( $model->text ); ?>">
 									</td>
 									<td>
-										<input type="number" id="wpal-field-font-size"
+										<input type="number" id="gcs-field-font-size"
 										name="<?php echo Setting::OPTION_FONT_SIZE; ?>"
 										value="<?php echo intval( $model->font_size ); ?>">
 										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
@@ -114,42 +114,42 @@ class Settings_View
 							<tbody id="input" class="box-element">
 								<tr>
 									<td rowspan="2" class="title">Input</td>
-									<td><label for="wpal-field-input"><?php _e( 'Color Background Input', App::PLUGIN_SLUG ); ?></label></td>
-									<td><label for="wpal-field-input_error"><?php _e( 'Color Background Input Error', App::PLUGIN_SLUG ); ?></label></td>
-									<td><label for="wpal-field-focus"><?php _e( 'Color Focus Input', App::PLUGIN_SLUG ); ?></label></td>
-									<td><label for="wpal-field-input-size"><?php _e( 'Input Size', App::PLUGIN_SLUG ); ?></label></td>
-									<td><label for="wpal-field-textarea-size"><?php _e( 'Textarea Size', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-input"><?php _e( 'Color Background Input', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-input_error"><?php _e( 'Color Background Input Error', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-focus"><?php _e( 'Color Focus Input', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-input-size"><?php _e( 'Input Size', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-textarea-size"><?php _e( 'Textarea Size', App::PLUGIN_SLUG ); ?></label></td>
 								</tr>
 								<tr>
 									<td>
 										<input data-component="color-picker"
 										data-default-color="#f9f9f9"
-										type="text" id="wpal-field-input"
+										type="text" id="gcs-field-input"
 										name="<?php echo Setting::OPTION_COLOR_INPUT; ?>"
 										value="<?php echo esc_html( $model->input ); ?>">
 									</td>
 									<td>
 										<input data-component="color-picker"
 										data-default-color="#ffeeee"
-										type="text" id="wpal-field-input-error"
+										type="text" id="gcs-field-input-error"
 										name="<?php echo Setting::OPTION_COLOR_INPUT_ERROR; ?>"
 										value="<?php echo esc_html( $model->input_error ); ?>">
 									</td>
 									<td>
 										<input data-component="color-picker"
 										data-default-color="#18e0c4"
-										type="text" id="wpal-field-focus"
+										type="text" id="gcs-field-focus"
 										name="<?php echo Setting::OPTION_COLOR_FOCUS; ?>"
 										value="<?php echo esc_html( $model->focus ); ?>">
 									</td>
 									<td>
-										<input type="number" id="wpal-field-input-size"
+										<input type="number" id="gcs-field-input-size"
 										name="<?php echo Setting::OPTION_INPUT_SIZE; ?>"
 										value="<?php echo intval( $model->input_size ); ?>">
 										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
 									</td>
 									<td>
-										<input type="number" id="wpal-field-textarea-size"
+										<input type="number" id="gcs-field-textarea-size"
 										name="<?php echo Setting::OPTION_TEXTAREA_SIZE; ?>"
 										value="<?php echo intval( $model->textarea_size ); ?>">
 										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
@@ -160,43 +160,43 @@ class Settings_View
 							<tbody id="btn" class="box-element">
 								<tr>
 									<td rowspan="3" class="title">Button</td>
-									<td><label for="wpal-field-btn_back"><?php _e( 'Color Button Background', App::PLUGIN_SLUG ); ?></label></td>
-									<td><label for="wpal-field-btn_text"><?php _e( 'Color Button Text', App::PLUGIN_SLUG ); ?></label></td>
-									<td><label for="wpal-field-btn_back_hover"><?php _e( 'Color Button Backgound Hover', App::PLUGIN_SLUG ); ?></label></td>
-									<td><label for="wpal-field-btn_text_hover"><?php _e( 'Color Button Text Hover', App::PLUGIN_SLUG ); ?></label></td>
-									<td><label for="wpal-field-font-size-btn"><?php _e( 'Font Size Button', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-btn_back"><?php _e( 'Color Button Background', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-btn_text"><?php _e( 'Color Button Text', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-btn_back_hover"><?php _e( 'Color Button Backgound Hover', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-btn_text_hover"><?php _e( 'Color Button Text Hover', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-font-size-btn"><?php _e( 'Font Size Button', App::PLUGIN_SLUG ); ?></label></td>
 								</tr>
 								<tr>
 									<td>
 										<input data-component="color-picker"
 										data-default-color="#7f6fce"
-										type="text" id="wpal-field-btn-back"
+										type="text" id="gcs-field-btn-back"
 										name="<?php echo Setting::OPTION_COLOR_BTN_BACK; ?>"
 										value="<?php echo esc_html( $model->btn_back ); ?>">
 									</td>
 									<td>
 										<input data-component="color-picker"
 										data-default-color="#ffffff"
-										type="text" id="wpal-field-btn-text"
+										type="text" id="gcs-field-btn-text"
 										name="<?php echo Setting::OPTION_COLOR_BTN_TEXT; ?>"
 										value="<?php echo esc_html( $model->btn_text ); ?>">
 									</td>
 									<td>
 										<input data-component="color-picker"
 										data-default-color="#ededed"
-										type="text" id="wpal-field-btn-back-hover"
+										type="text" id="gcs-field-btn-back-hover"
 										name="<?php echo Setting::OPTION_COLOR_BTN_BACK_HOVER; ?>"
 										value="<?php echo esc_html( $model->btn_back_hover ); ?>">
 									</td>
 									<td>
 										<input data-component="color-picker"
 										data-default-color="#7f6fce"
-										type="text" id="wpal-field-btn-text-hover"
+										type="text" id="gcs-field-btn-text-hover"
 										name="<?php echo Setting::OPTION_COLOR_BTN_TEXT_HOVER; ?>"
 										value="<?php echo esc_html( $model->btn_text_hover ); ?>">
 									</td>
 									<td>
-										<input type="number" id="wpal-field-font-size-btn"
+										<input type="number" id="gcs-field-font-size-btn"
 										name="<?php echo Setting::OPTION_FONT_SIZE_BTN; ?>"
 										value="<?php echo intval( $model->font_size_btn ); ?>">
 										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
@@ -207,21 +207,21 @@ class Settings_View
 							<tbody id="border" class="box-element">
 								<tr>
 									<td rowspan="2" class="title">Border</td>
-									<td><label for="wpal-field-border-size"><?php _e( 'Border Size', App::PLUGIN_SLUG ); ?></label></td>
-									<td><label for="wpal-field-border-radius"><?php _e( 'Border Radius', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-border-size"><?php _e( 'Border Size', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-border-radius"><?php _e( 'Border Radius', App::PLUGIN_SLUG ); ?></label></td>
 									<td></td>
 									<td></td>
 									<td></td>
 								</tr>
 								<tr>
 									<td>
-										<input type="number" id="wpal-field-border-size"
+										<input type="number" id="gcs-field-border-size"
 										name="<?php echo Setting::OPTION_BORDER_SIZE; ?>"
 										value="<?php echo intval( $model->border_size ); ?>">
 										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
 									</td>
 									<td>
-										<input type="number" id="wpal-field-border-radius"
+										<input type="number" id="gcs-field-border-radius"
 										name="<?php echo Setting::OPTION_BORDER_RADIUS; ?>"
 										value="<?php echo intval( $model->border_radius ); ?>">
 										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
@@ -235,8 +235,8 @@ class Settings_View
 							<tbody id="validation" class="box-element">
 								<tr>
 									<td rowspan="2" class="title">Validation</td>
-									<td><label for="wpal-field-success"><?php _e( 'Color Message Success', App::PLUGIN_SLUG ); ?></label></td>
-									<td><label for="wpal-field-error"><?php _e( 'Color Error Message', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-success"><?php _e( 'Color Message Success', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-error"><?php _e( 'Color Error Message', App::PLUGIN_SLUG ); ?></label></td>
 									<td></td>
 									<td></td>
 									<td></td>
@@ -245,14 +245,14 @@ class Settings_View
 									<td>
 										<input data-component="color-picker"
 										data-default-color="#009d47"
-										type="text" id="wpal-field-success"
+										type="text" id="gcs-field-success"
 										name="<?php echo Setting::OPTION_COLOR_SUCCESS; ?>"
 										value="<?php echo esc_html( $model->success ); ?>">
 									</td>
 									<td>
 										<input data-component="color-picker"
 										data-default-color="#eb0c0c"
-										type="text" id="wpal-field-error"
+										type="text" id="gcs-field-error"
 										name="<?php echo Setting::OPTION_COLOR_ERROR; ?>"
 										value="<?php echo esc_html( $model->error ); ?>">
 									</td>

@@ -1,5 +1,5 @@
 <?php
-namespace WPA\Login;
+namespace GCS\Custom;
 
 // Avoid that files are directly loaded
 if ( ! function_exists( 'add_action' ) ) :
@@ -14,8 +14,8 @@ class Core
 	public function __construct()
 	{
 		add_action( 'admin_enqueue_scripts', array( &$this, 'scripts_admin' ) );
-		add_action( 'login_enqueue_scripts', array( &$this, 'scripts_login' ) );
-		add_action( 'wp_head', array( &$this, 'styles_login' ) );
+		add_action( 'login_enqueue_scripts', array( &$this, 'scripts_gf_custom' ) );
+		add_action( 'wp_head', array( &$this, 'styles_gf_custom' ) );
 		add_action( 'init', array( __NAMESPACE__ . '\App', 'load_textdomain' ) );
 
 		$settings = new Settings_Controller();
@@ -26,14 +26,14 @@ class Core
 
 	}
 
-	public function styles_login()
+	public function styles_gf_custom()
 	{
-		$url = App::plugins_url( '/login.style.css' ) . '?ver=' . App::filemtime( 'login.style.css' );
+		$url = App::plugins_url( '/gf-custom.style.css' ) . '?ver=' . App::filemtime( 'gf-custom.style.css' );
 
 		echo '<link rel="stylesheet" id="custom-login-css" href="' . esc_url( $url ) . '" type="text/css" media="all" />';
 	}
 
-	public function scripts_login()
+	public function scripts_gf_custom()
 	{
 		wp_enqueue_script(
 			'custom-login-' . App::PLUGIN_SLUG,

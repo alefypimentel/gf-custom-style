@@ -1,5 +1,5 @@
 <?php
-namespace WPA\Login;
+namespace GCS\Custom;
 
 if ( ! function_exists( 'add_action' ) ) :
 	exit(0);
@@ -196,9 +196,9 @@ class Setting
 	 * @since 1.0
 	 * @var string
 	 */
-	const NONCE_GENERAL_ACTION = 'wpal-setting-general-action';
+	const NONCE_GENERAL_ACTION = 'gcs-setting-general-action';
 
-	const NONCE_GENERAL_NAME   = 'wpal-setting-general-name';
+	const NONCE_GENERAL_NAME   = 'gcs-setting-general-name';
 
 	/**
 	 * Options
@@ -206,51 +206,51 @@ class Setting
 	 * @since 1.0
 	 * @var string
 	 */
-	const OPTION_COLOR_BASE = 'wpal-field-base';
+	const OPTION_COLOR_BASE = 'gcs-field-base';
 
-	const OPTION_COLOR_BACKGROUND = 'wpal-field-background';
+	const OPTION_COLOR_BACKGROUND = 'gcs-field-background';
 
-	const OPTION_COLOR_BORDER = 'wpal-field-border';
+	const OPTION_COLOR_BORDER = 'gcs-field-border';
 
-	const OPTION_COLOR_BTN_BACK = 'wpal-field-btn-back';
+	const OPTION_COLOR_BTN_BACK = 'gcs-field-btn-back';
 
-	const OPTION_COLOR_BTN_TEXT = 'wpal-field-btn-text';
+	const OPTION_COLOR_BTN_TEXT = 'gcs-field-btn-text';
 
-	const OPTION_COLOR_BTN_BACK_HOVER = 'wpal-field-btn-back-hover';
+	const OPTION_COLOR_BTN_BACK_HOVER = 'gcs-field-btn-back-hover';
 
-	const OPTION_COLOR_BTN_TEXT_HOVER = 'wpal-field-btn-text-hover';
+	const OPTION_COLOR_BTN_TEXT_HOVER = 'gcs-field-btn-text-hover';
 
-	const OPTION_COLOR_CHECKED = 'wpal-field-checked';
+	const OPTION_COLOR_CHECKED = 'gcs-field-checked';
 
-	const OPTION_COLOR_ERROR = 'wpal-field-error';
+	const OPTION_COLOR_ERROR = 'gcs-field-error';
 
-	const OPTION_COLOR_FOCUS = 'wpal-field-focus';
+	const OPTION_COLOR_FOCUS = 'gcs-field-focus';
 
-	const OPTION_COLOR_HOVER = 'wpal-field-hover';
+	const OPTION_COLOR_HOVER = 'gcs-field-hover';
 
-	const OPTION_COLOR_INPUT = 'wpal-field-input';
+	const OPTION_COLOR_INPUT = 'gcs-field-input';
 
-	const OPTION_COLOR_INPUT_ERROR = 'wpal-field-input-error';
+	const OPTION_COLOR_INPUT_ERROR = 'gcs-field-input-error';
 
-	const OPTION_COLOR_LABEL = 'wpal-field-label';
+	const OPTION_COLOR_LABEL = 'gcs-field-label';
 
-	const OPTION_COLOR_PLACEHOLDER = 'wpal-field-placeholder';
+	const OPTION_COLOR_PLACEHOLDER = 'gcs-field-placeholder';
 
-	const OPTION_COLOR_TEXT = 'wpal-field-text';
+	const OPTION_COLOR_TEXT = 'gcs-field-text';
 
-	const OPTION_COLOR_SUCCESS = 'wpal-field-success';
+	const OPTION_COLOR_SUCCESS = 'gcs-field-success';
 
-	const OPTION_BORDER_SIZE = 'wpal-field-border-size';
+	const OPTION_BORDER_SIZE = 'gcs-field-border-size';
 
-	const OPTION_INPUT_SIZE = 'wpal-field-input-size';
+	const OPTION_INPUT_SIZE = 'gcs-field-input-size';
 
-	const OPTION_TEXTAREA_SIZE = 'wpal-field-textarea-size';
+	const OPTION_TEXTAREA_SIZE = 'gcs-field-textarea-size';
 
-	const OPTION_BORDER_RADIUS = 'wpal-field-border-radius';
+	const OPTION_BORDER_RADIUS = 'gcs-field-border-radius';
 
-	const OPTION_FONT_SIZE = 'wpal-field-font-size';
+	const OPTION_FONT_SIZE = 'gcs-field-font-size';
 
-	const OPTION_FONT_SIZE_BTN = 'wpal-field-font-size-btn';
+	const OPTION_FONT_SIZE_BTN = 'gcs-field-font-size-btn';
 
 	/**
 	 * Page slug
@@ -258,7 +258,7 @@ class Setting
 	 * @since 0.3
 	 * @var String
 	 */
-	 const PAGE_SLUG = 'wpal-settings-theme';
+	 const PAGE_SLUG = 'gcs-settings-theme';
 
 	/**
 	 * Methods

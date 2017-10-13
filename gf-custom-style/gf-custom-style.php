@@ -9,7 +9,7 @@
 	Domain Path: /languages
 */
 
-namespace WPA\Login;
+namespace GCS\Custom;
 
 // Avoid that files are directly loaded
 if ( ! function_exists( 'add_action' ) ) :

@@ -31,6 +31,10 @@
 	width: 14px!important;
 	-webkit-appearance: radio;
 }
+.gcs-form input[type='radio'],
+.gcs-form input[type="checkbox"] {
+	position: relative;
+}
 .gcs-form input[type="checkbox"]:after {
 	border-color: #d0d0d0;
 	cursor: pointer;

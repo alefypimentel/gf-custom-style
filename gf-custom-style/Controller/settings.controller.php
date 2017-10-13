@@ -1,5 +1,5 @@
 <?php
-namespace WPA\Login;
+namespace GCS\Custom;
 
 // Avoid that files are directly loaded
 if ( ! function_exists( 'add_action' ) ) :
@@ -16,14 +16,14 @@ class Settings_Controller
 		add_action( 'admin_menu', array( &$this, 'menu' ) );
 		add_action( 'wp_ajax_general_save_settings', array( &$this, 'save' ) );
 		add_filter( 'upload_mimes', array( &$this, 'available_svg_upload' ) );
-		add_action( 'wp_head', array( 'WPA\Login\Settings_View', 'render_config_css_inline' ) );
+		add_action( 'wp_head', array( 'GCS\Custom\Settings_View', 'render_config_css_inline' ) );
 		add_filter( 'login_headerurl', array( &$this, 'custom_login_header_url' ) );
 		add_filter( 'plugin_action_links_' . App::plugin_basename_file(), array( &$this, 'add_action_links' ) );
 	}
 
 	public function add_action_links( $links )
 	{
-		$links[] = '<a href="' . admin_url( 'themes.php?page=wpal-settings-theme' ) . '">' . __( 'Settings', App::PLUGIN_SLUG ) . '</a>';
+		$links[] = '<a href="' . admin_url( 'themes.php?page=gcs-settings-theme' ) . '">' . __( 'Settings', App::PLUGIN_SLUG ) . '</a>';
 		return $links;
 	}
 
