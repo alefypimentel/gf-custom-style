@@ -104,7 +104,14 @@ class Setting
 	 * @since 1.0
 	 * @var string
 	 */
-	private $hover;
+	private $btn_float;
+
+	/**
+	 *
+	 * @since 1.0
+	 * @var string
+	 */
+	private $btn_size;
 
 	/**
 	 *
@@ -226,7 +233,11 @@ class Setting
 
 	const OPTION_COLOR_FOCUS = 'gcs-field-focus';
 
-	const OPTION_COLOR_HOVER = 'gcs-field-hover';
+	const OPTION_BTN_FLOAT = 'gcs-field-btn-float';
+	const OPTION_BTN_FLOAT1 = 'gcs-field-btn-float1';
+	const OPTION_BTN_FLOAT2 = 'gcs-field-btn-float2';
+
+	const OPTION_BTN_SIZE = 'gcs-field-btn-size';
 
 	const OPTION_COLOR_INPUT = 'gcs-field-input';
 
@@ -324,8 +335,12 @@ class Setting
 				update_option( self::OPTION_COLOR_FOCUS, $value );
 					break;
 
-			case 'hover' :
-				update_option( self::OPTION_COLOR_HOVER, $value );
+			case 'btn_float' :
+				update_option( self::OPTION_BTN_FLOAT, $value );
+				break;
+
+			case 'btn_size' :
+				update_option( self::OPTION_BTN_SIZE, $value );
 				break;
 
 			case 'input' :
@@ -432,9 +447,14 @@ class Setting
 					$this->focus = get_option( self::OPTION_COLOR_FOCUS, '#18e0c4' );
 				break;
 
-			case 'hover' :
-				if ( ! isset( $this->hover ) )
-					$this->hover = get_option( self::OPTION_COLOR_HOVER, '#18e0c4' );
+			case 'btn_float' :
+				if ( ! isset( $this->btn_float ) )
+					$this->btn_float = get_option( self::OPTION_BTN_FLOAT, 'right' );
+				break;
+
+			case 'btn_size' :
+				if ( ! isset( $this->btn_size ) )
+					$this->btn_size = get_option( self::OPTION_BTN_SIZE, '125px' );
 				break;
 
 			case 'input' :

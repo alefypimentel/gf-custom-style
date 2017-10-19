@@ -38,9 +38,9 @@ class Settings_View
 								<tr>
 									<td rowspan="2" class="title">Base</td>
 									<td><label for="gcs-field-base"><?php _e( 'Color Base', App::PLUGIN_SLUG ); ?></label></td>
-									<td><label for="gcs-field-border"><?php _e( 'Color Border', App::PLUGIN_SLUG ); ?></label></td>
 									<td><label for="gcs-field-checked"><?php _e( 'Color Checkbox and Radio', App::PLUGIN_SLUG ); ?></label></td>
-									<td></td>
+									<td><label for="gcs-field-btn-float"><?php _e( 'Button position', App::PLUGIN_SLUG ); ?></label></td>
+									<td><label for="gcs-field-btn-size"><?php _e( 'Button Size', App::PLUGIN_SLUG ); ?></label></td>
 									<td></td>
 								</tr>
 								<tr>
@@ -54,18 +54,33 @@ class Settings_View
 									<td>
 										<input data-component="color-picker"
 										data-default-color="#7f6fce"
-										type="text" id="gcs-field-border"
-										name="<?php echo Setting::OPTION_COLOR_BORDER; ?>"
-										value="<?php echo esc_html( $model->border ); ?>">
-									</td>
-									<td>
-										<input data-component="color-picker"
-										data-default-color="#7f6fce"
 										type="text" id="gcs-field-checked"
 										name="<?php echo Setting::OPTION_COLOR_CHECKED; ?>"
 										value="<?php echo esc_html( $model->checked ); ?>">
 									</td>
-									<td></td>
+									<td>
+									<script type="text/javascript">
+									   jQuery("#name").live("change", function() {
+										 jQuery("#gcs-field-btn-float").val(jQuery(this).find("option:selected").attr("value"));
+									   });
+							   		</script>
+
+									<select id="name" name="name" style="width: 17px;height: 25px;">
+										<option value="">Please select...</option>
+										<option value="left">Left</option>
+										<option value="right">Right</option>
+										<option value="center">Center</option>
+									</select>
+
+									<input type="text" id="gcs-field-btn-float" name="<?php echo Setting::OPTION_BTN_FLOAT; ?>" value="<?php echo esc_html( $model->btn_float ); ?>" readonly="readonly" style="float: left;">
+										<p class="description" style="clear: both;"><?php printf( __( 'Define position button, left or center or right.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
+									</td>
+									<td>
+										<input type="text" id="gcs-field-btn-size"
+										name="<?php echo Setting::OPTION_BTN_SIZE; ?>"
+										value="<?php echo esc_html( $model->btn_size ); ?>">
+										<p class="description"><?php printf( __( 'Define widht button in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
+									</td>
 									<td></td>
 								</tr>
 							</tbody>
@@ -207,13 +222,20 @@ class Settings_View
 							<tbody id="border" class="box-element">
 								<tr>
 									<td rowspan="2" class="title">Border</td>
+									<td><label for="gcs-field-border"><?php _e( 'Color Border', App::PLUGIN_SLUG ); ?></label></td>
 									<td><label for="gcs-field-border-size"><?php _e( 'Border Size', App::PLUGIN_SLUG ); ?></label></td>
 									<td><label for="gcs-field-border-radius"><?php _e( 'Border Radius', App::PLUGIN_SLUG ); ?></label></td>
 									<td></td>
 									<td></td>
-									<td></td>
 								</tr>
 								<tr>
+									<td>
+										<input data-component="color-picker"
+										data-default-color="#7f6fce"
+										type="text" id="gcs-field-border"
+										name="<?php echo Setting::OPTION_COLOR_BORDER; ?>"
+										value="<?php echo esc_html( $model->border ); ?>">
+									</td>
 									<td>
 										<input type="number" id="gcs-field-border-size"
 										name="<?php echo Setting::OPTION_BORDER_SIZE; ?>"
@@ -226,7 +248,6 @@ class Settings_View
 										value="<?php echo intval( $model->border_radius ); ?>">
 										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
 									</td>
-									<td></td>
 									<td></td>
 									<td></td>
 								</tr>
@@ -320,10 +341,11 @@ class Settings_View
 		$btn_text		= htmlentities( $model->btn_text );
 		$btn_back_hover	= htmlentities( $model->btn_back_hover );
 		$btn_text_hover	= htmlentities( $model->btn_text_hover );
+		$btn_float		= htmlentities( $model->btn_float );
+		$btn_size		= htmlentities( $model->btn_size );
 		$checked		= htmlentities( $model->checked );
 		$error			= htmlentities( $model->error );
 		$focus			= htmlentities( $model->focus );
-		// $hover			= htmlentities( $model->hover );
 		$input			= htmlentities( $model->input );
 		$input_error	= htmlentities( $model->input_error );
 		$label			= htmlentities( $model->label );
@@ -412,9 +434,13 @@ class Settings_View
 				border-width: {$border_size}px !important;
 				border-color: {$border} !important;
 			}
+			.gcs-form .gform_footer {
+				float: {$btn_float}!important;
+			}
 			.gcs-form.alfa .gform_button {
 				color: {$btn_text} !important;
 				background: {$btn_back} !important;
+				width: {$btn_size} !important;
 			}
 			.gcs-form.alfa .gform_button:hover {
 				background: {$btn_back_hover} !important;
