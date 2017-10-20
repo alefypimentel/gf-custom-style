@@ -114,6 +114,13 @@ class Setting
 	private $btn_size;
 
 	/**
+	*
+	* @since 1.0
+	* @var int
+	*/
+	private $theme;
+
+	/**
 	 *
 	 * @since 1.0
 	 * @var int
@@ -234,8 +241,8 @@ class Setting
 	const OPTION_COLOR_FOCUS = 'gcs-field-focus';
 
 	const OPTION_BTN_FLOAT = 'gcs-field-btn-float';
-	const OPTION_BTN_FLOAT1 = 'gcs-field-btn-float1';
-	const OPTION_BTN_FLOAT2 = 'gcs-field-btn-float2';
+
+	const OPTION_THEME = 'gcs-field-theme';
 
 	const OPTION_BTN_SIZE = 'gcs-field-btn-size';
 
@@ -337,6 +344,10 @@ class Setting
 
 			case 'btn_float' :
 				update_option( self::OPTION_BTN_FLOAT, $value );
+				break;
+
+			case 'theme' :
+				update_option( self::OPTION_THEME, $value );
 				break;
 
 			case 'btn_size' :
@@ -450,6 +461,11 @@ class Setting
 			case 'btn_float' :
 				if ( ! isset( $this->btn_float ) )
 					$this->btn_float = get_option( self::OPTION_BTN_FLOAT, 'right' );
+				break;
+
+			case 'theme' :
+				if ( ! isset( $this->theme ) )
+					$this->theme = get_option( self::OPTION_THEME, 'default' );
 				break;
 
 			case 'btn_size' :

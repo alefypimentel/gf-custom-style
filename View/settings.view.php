@@ -59,27 +59,28 @@ class Settings_View
 										value="<?php echo esc_html( $model->checked ); ?>">
 									</td>
 									<td>
-									<script type="text/javascript">
-									   jQuery("#name").live("change", function() {
-										 jQuery("#gcs-field-btn-float").val(jQuery(this).find("option:selected").attr("value"));
-									   });
-							   		</script>
+										<script type="text/javascript">
+										jQuery("#name").live("change", function() {
+											jQuery("#gcs-field-btn-float").val(jQuery(this).find("option:selected").attr("value"));
+										});
+										</script>
 
-									<select id="name" name="name" style="width: 17px;height: 25px;">
-										<option value="">Please select...</option>
-										<option value="left">Left</option>
-										<option value="right">Right</option>
-										<option value="center">Center</option>
-									</select>
+										<select id="name" name="name" style="width: 17px;height: 25px;">
+											<option value="">Please select...</option>
+											<option value="left">Left</option>
+											<option value="right">Right</option>
+											<option value="center">Center</option>
+										</select>
 
-									<input type="text" id="gcs-field-btn-float" name="<?php echo Setting::OPTION_BTN_FLOAT; ?>" value="<?php echo esc_html( $model->btn_float ); ?>" readonly="readonly" style="float: left;">
-										<p class="description" style="clear: both;"><?php printf( __( 'Define position button, left or center or right.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
+										<input type="text" id="gcs-field-btn-float" name="<?php echo Setting::OPTION_BTN_FLOAT; ?>" value="<?php echo esc_html( $model->btn_float ); ?>" readonly="readonly" style="float: left; width: 55px;">
 									</td>
 									<td>
 										<input type="text" id="gcs-field-btn-size"
 										name="<?php echo Setting::OPTION_BTN_SIZE; ?>"
 										value="<?php echo esc_html( $model->btn_size ); ?>">
-										<p class="description"><?php printf( __( 'Define widht button in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
+										<span>px</span>
+										or
+										<span style="margin-left: 5px; border-color: orange;">%</span>
 									</td>
 									<td></td>
 								</tr>
@@ -120,7 +121,7 @@ class Settings_View
 										<input type="number" id="gcs-field-font-size"
 										name="<?php echo Setting::OPTION_FONT_SIZE; ?>"
 										value="<?php echo intval( $model->font_size ); ?>">
-										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
+										<span>px</span>
 									</td>
 									<td></td>
 								</tr>
@@ -161,13 +162,13 @@ class Settings_View
 										<input type="number" id="gcs-field-input-size"
 										name="<?php echo Setting::OPTION_INPUT_SIZE; ?>"
 										value="<?php echo intval( $model->input_size ); ?>">
-										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
+										<span>px</span>
 									</td>
 									<td>
 										<input type="number" id="gcs-field-textarea-size"
 										name="<?php echo Setting::OPTION_TEXTAREA_SIZE; ?>"
 										value="<?php echo intval( $model->textarea_size ); ?>">
-										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
+										<span>px</span>
 									</td>
 								</tr>
 							</tbody>
@@ -214,7 +215,7 @@ class Settings_View
 										<input type="number" id="gcs-field-font-size-btn"
 										name="<?php echo Setting::OPTION_FONT_SIZE_BTN; ?>"
 										value="<?php echo intval( $model->font_size_btn ); ?>">
-										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
+										<span>px</span>
 									</td>
 								</tr>
 							</tbody>
@@ -240,13 +241,13 @@ class Settings_View
 										<input type="number" id="gcs-field-border-size"
 										name="<?php echo Setting::OPTION_BORDER_SIZE; ?>"
 										value="<?php echo intval( $model->border_size ); ?>">
-										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
+										<span>px</span>
 									</td>
 									<td>
 										<input type="number" id="gcs-field-border-radius"
 										name="<?php echo Setting::OPTION_BORDER_RADIUS; ?>"
 										value="<?php echo intval( $model->border_radius ); ?>">
-										<p class="description"><?php printf( __( 'Value is defined in %spixels%s.', App::PLUGIN_SLUG  ), '<strong>', '</strong>' ) ?></p>
+										<span>px</span>
 									</td>
 									<td></td>
 									<td></td>
@@ -258,7 +259,7 @@ class Settings_View
 									<td rowspan="2" class="title">Validation</td>
 									<td><label for="gcs-field-success"><?php _e( 'Color Message Success', App::PLUGIN_SLUG ); ?></label></td>
 									<td><label for="gcs-field-error"><?php _e( 'Color Error Message', App::PLUGIN_SLUG ); ?></label></td>
-									<td></td>
+									<td><label for="gcs-field-theme"><?php _e( 'Model Theme', App::PLUGIN_SLUG ); ?></label></td>
 									<td></td>
 									<td></td>
 								</tr>
@@ -277,7 +278,22 @@ class Settings_View
 										name="<?php echo Setting::OPTION_COLOR_ERROR; ?>"
 										value="<?php echo esc_html( $model->error ); ?>">
 									</td>
-									<td></td>
+									<td>
+										<script type="text/javascript">
+										jQuery("#nameTheme").live("change", function() {
+											jQuery("#gcs-field-theme").val(jQuery(this).find("option:selected").attr("value"));
+										});
+										</script>
+
+										<select id="nameTheme" name="nameTheme" style="width: 17px;height: 25px;">
+											<option value="">Theme select...</option>
+											<option value="alfa">Alfa</option>
+											<option value="beta">Beta</option>
+											<option value="default">Default</option>
+										</select>
+
+										<input type="text" id="gcs-field-theme" name="<?php echo Setting::OPTION_THEME; ?>" value="<?php echo esc_html( $model->theme ); ?>" readonly="readonly" style="float: left;">
+									</td>
 									<td></td>
 									<td></td>
 								</tr>
@@ -343,6 +359,7 @@ class Settings_View
 		$btn_text_hover	= htmlentities( $model->btn_text_hover );
 		$btn_float		= htmlentities( $model->btn_float );
 		$btn_size		= htmlentities( $model->btn_size );
+		$theme			= htmlentities( $model->theme );
 		$checked		= htmlentities( $model->checked );
 		$error			= htmlentities( $model->error );
 		$focus			= htmlentities( $model->focus );

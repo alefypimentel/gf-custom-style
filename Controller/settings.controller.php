@@ -76,6 +76,7 @@ class Settings_Controller
 		$model->error  			= Utils_Helper::post( Setting::OPTION_COLOR_ERROR, false, 'esc_html' );
 		$model->focus	     	= Utils_Helper::post( Setting::OPTION_COLOR_FOCUS, false, 'esc_html' );
 		$model->btn_float    	= Utils_Helper::post( Setting::OPTION_BTN_FLOAT, false, 'esc_html' );
+		$model->theme    		= Utils_Helper::post( Setting::OPTION_THEME, false, 'esc_html' );
 		$model->btn_size    	= Utils_Helper::post( Setting::OPTION_BTN_SIZE, false, 'esc_html' );
 		$model->input  			= Utils_Helper::post( Setting::OPTION_COLOR_INPUT, false, 'esc_html' );
 		$model->input_error 	= Utils_Helper::post( Setting::OPTION_COLOR_INPUT_ERROR, false, 'esc_html' );

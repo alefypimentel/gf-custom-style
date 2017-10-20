@@ -5,10 +5,10 @@
 
 .tablinks {
     padding: 15px;
-    background: #2d3f50;
+    background: #1b2834;
     display: flex;
     color: #fff;
-    box-shadow: 0px 0px 5px -2px #000000;
+    box-shadow: 0px 0px 5px -2px #ffffff;
     cursor: pointer;
     transition: .3s ease-in-out;
 
@@ -20,6 +20,23 @@
 
 .form-table {
     box-shadow: 0px 1px 6px -3px #000;
+
+    p.description,
+    td {
+        color: #fff;
+    }
+
+    span {
+        padding: 3px 0 5px;
+        color: #fff;
+        border-bottom: 2px solid #6ee1c5;
+        border-top: 2px solid #6ee1c5;
+        margin-right: 5px;
+    }
+
+    input[type=text] {
+        max-width: 75px;
+    }
 }
 
 .header-table {
@@ -34,16 +51,16 @@
 
 .box-element {
     &:nth-child(odd) {
-        background: #fff;
+        background: #405669;
     }
 
     &:nth-child(even) {
-        background: #f9f9f9;
+        background: #2d3f50;
     }
 }
 
 .title {
-    background: #2c3e50;
+    background: #1b2733;
     color: #fff;
     width: 100px;
     text-align: center;
@@ -51,7 +68,7 @@
 
 input[type=number] {
     border: 1px solid #d8d8d8;
-    max-width: 132px;
+    max-width: 55px;
     border-radius: 3px;
     box-shadow: 0px 0px 5px -2px #000000;
 
