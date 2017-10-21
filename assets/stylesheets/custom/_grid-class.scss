@@ -1,0 +1,42 @@
+#css_ready_modal h4 {
+    margin-bottom:2px;
+}
+.cssr_accordian {
+    // display:none;
+}
+a.cssr_acc_link {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: left;
+    background: #87C;
+    border: none;
+    font-size: 15px;
+    color: #fff;
+    box-shadow: 0px 0px 5px -3px #000;
+}
+a.cssr_link {
+    text-decoration: none;
+    margin-top: 5px;
+    margin-left: 2%;
+    text-align: center;
+    border-right: 0;
+    padding: 3px;
+    color: #fff;
+    background: #18e0c4;
+    display: inline-block;
+    box-shadow: 0px 0px 3px -2px #000;
+
+    &:first-child {
+        margin-left: 0;
+    }
+}
+a.cssr_link:hover {
+    background:#ddd;
+}
+ul.cssr_ul {
+    margin:0; padding: 0;
+}
+ul.cssr_ul li {
+    margin:2px; padding: 0;
+}
