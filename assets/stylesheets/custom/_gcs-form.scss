@@ -143,15 +143,32 @@
 .gcs-form.alfa input[type="radio"]:checked:after {
 	border-style: solid;
 }
-.gcs-form .w1 {
-	clear: both;
-	margin-left: 0;
-	width: 100%;
+.gcs-form {
+	.w1 {
+		clear: both;
+		margin-left: 0;
+		width: 100%;
+	}
+
+	.w1-2 {
+		margin-left: 2%;
+		width: 74%;
+	}
 }
 
-.gcs-form .w2 {
-	margin-left: 4%;
-	width: 48%;
+.gcs-form {
+	.w2 {
+		margin-left: 4%;
+	}
+
+	.w2-2 {
+		margin-left: 2%;
+	}
+
+	.w2,
+	.w2-2 {
+		width: 48%;
+	}
 }
 
 .gcs-form .w3 {
@@ -159,14 +176,19 @@
 	width: 32%;
 }
 
-.gcs-form .w4 {
-	margin-left: 2%;
-	width: 23.5%;
-}
+.gcs-form {
+	.w4 {
+		width: 23.5%;
+	}
 
-.gcs-form .w4-2 {
-	margin-left: 2%;
-	width: 24%;
+	.w4-2 {
+		width: 24%;
+	}
+
+	.w4,
+	.w4-2 {
+		margin-left: 2%;
+	}
 }
 
 .gcs-form .w-clear {
@@ -182,6 +204,7 @@
 .gcs-form .w2,
 .gcs-form .w3,
 .gcs-form .w4,
+.gcs-form .w1-2,
 .gcs-form .w4-2,
 .gcs-form .col .name_first,
 .gcs-form .col .name_last,

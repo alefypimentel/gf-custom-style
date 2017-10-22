@@ -2,94 +2,94 @@
 
 if (!class_exists('GFCustomClass')) {
 
-  class GFCustomClass {
+	class GFCustomClass {
 
-    //display admin warnings if GF is not the correct version or GF is not installed
-    public static function admin_warnings($plugin, $textdomain, $min_gf_version) {
-      if ( !self::is_gravityforms_installed() ) {
-        $message = __('requires Gravity Forms to be installed.', $textdomain);
-      } else if ( !self::is_gravityforms_supported($min_gf_version) ) {
-        $message = __('requires a minimum Gravity Forms version of ', $textdomain) . $min_gf_version;
-      }
+	//display admin warnings if GF is not the correct version or GF is not installed
+	public static function admin_warnings($plugin, $textdomain, $min_gf_version) {
+		if ( !self::is_gravityforms_installed() ) {
+			$message = __('requires Gravity Forms to be installed.', $textdomain);
+		} else
+		if ( !self::is_gravityforms_supported($min_gf_version) ) {
+			$message = __('requires a minimum Gravity Forms version of ', $textdomain) . $min_gf_version;
+		}
 
-      if (empty($message)) {
-        return;
-      }
-      ?>
-      <div class="error">
-        <p>
-          <?php _e('The plugin ', $textdomain); ?><strong><?php echo $plugin; ?></strong> <?php echo $message; ?><br />
-          <?php _e('Please ', $textdomain); ?><a href="http://bit.ly/getgravityforms"><?php _e(' download the latest version ',$textdomain); ?></a><?php _e(' of Gravity Forms and try again.',$textdomain) ?>
-        </p>
-      </div>
-      <?php
-    }
+		if (empty($message)) {
+			return;
+		}?>
 
-    /*
-     * Check if GF is installed
-     */
-    public static function is_gravityforms_installed(){
-      return class_exists( 'RGForms' );
-    }
+		<div class="error">
+			<p>
+				<?php _e('The plugin ', $textdomain); ?><strong><?php echo $plugin; ?></strong> <?php echo $message; ?><br />
+				<?php _e('Please ', $textdomain); ?><a href="http://bit.ly/getgravityforms"><?php _e(' download the latest version ',$textdomain); ?></a><?php _e(' of Gravity Forms and try again.',$textdomain) ?>
+			</p>
+		</div>
+	<?php }
 
-    /*
-     * Check if the installed version of GF is supported
-     */
-    public static function is_gravityforms_supported($min_gf_version = '1.5'){
-      return self::check_gravityforms_version( $min_gf_version,'>=' );
-    }
+	/*
+	* Check if GF is installed
+	*/
+	public static function is_gravityforms_installed() {
+		return class_exists( 'RGForms' );
+	}
 
-    /*
-     * Do a GF version compare
-     */
-    public static function check_gravityforms_version($version, $operator){
-      if(class_exists('GFCommon')){
-        return version_compare( GFCommon::$version, $version, $operator );
-      }
-      return false;
-    }
+	/*
+	* Check if the installed version of GF is supported
+	*/
+	public static function is_gravityforms_supported($min_gf_version = '1.5') {
+		return self::check_gravityforms_version( $min_gf_version,'>=' );
+	}
 
-    /*
-     * Returns the url of the plugin's root folder
-     */
-    public function get_base_url(){
-      return plugins_url(null, __FILE__);
-    }
+	/*
+	* Do a GF version compare
+	*/
+	public static function check_gravityforms_version($version, $operator) {
+		if(class_exists('GFCommon')) {
+			return version_compare( GFCommon::$version, $version, $operator );
+		}
 
-    /*
-     * Returns the physical path of the plugin's root folder
-     */
-    public function get_base_path(){
-      $folder = basename(dirname(__FILE__));
-      return WP_PLUGIN_DIR . '/' . $folder;
-    }
+		return false;
+	}
 
-    /**
-     * starts_with
-     * Tests if a text starts with an given string.
-     *
-     * @param     string
-     * @param     string
-     * @return    bool
-     */
-    public static function starts_with($haystack, $needle){
-      return strpos($haystack, $needle) === 0;
-    }
+	/*
+	* Returns the url of the plugin's root folder
+	*/
+	public function get_base_url() {
+		return plugins_url(null, __FILE__);
+	}
 
-    /*
-     * returns true if a needle can be found in a haystack
-     */
-    public static function str_contains($haystack, $needle) {
-      if (empty($haystack) || empty($needle))
-        return false;
+	/*
+	* Returns the physical path of the plugin's root folder
+	*/
+	public function get_base_path() {
+		$folder = basename(dirname(__FILE__));
+		return WP_PLUGIN_DIR . '/' . $folder;
+	}
 
-      $pos = strpos(strtolower($haystack), strtolower($needle));
+	/**
+	* starts_with
+	* Tests if a text starts with an given string.
+	*
+	* @param     string
+	* @param     string
+	* @return    bool
+	*/
+	public static function starts_with($haystack, $needle) {
+		return strpos($haystack, $needle) === 0;
+	}
 
-      if ($pos === false)
-        return false;
-      else
-        return true;
-    }
-  }
-}
-?>
+	/*
+	* returns true if a needle can be found in a haystack
+	*/
+	public static function str_contains($haystack, $needle) {
+		if (empty($haystack) || empty($needle))
+			return false;
+
+		$pos = strpos(strtolower($haystack), strtolower($needle));
+
+		if ($pos === false)
+			return false;
+		else
+			return true;
+		}
+	}
+} ?>
