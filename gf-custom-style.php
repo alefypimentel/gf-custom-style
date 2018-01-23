@@ -71,3 +71,5 @@ App::uses( 'core', 'Config' );
 $core = new Core();
 
 register_activation_hook( __FILE__, array( $core, 'activate' ) );
+
+@include_once "gf-custom-style-class.php";

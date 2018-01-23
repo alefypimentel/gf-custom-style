@@ -1,5 +1,5 @@
 # GF Custom Style
-If you want to change the login form style, this plugin is for you!
+If you want to style the gravity form, this plugin is for you!
 
 ## Contributing
 1. Fork it!
@@ -10,6 +10,3 @@ If you want to change the login form style, this plugin is for you!
 
 ## License
 [GPL v2.0](http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
-
-## References
-- [Monkey JS](https://github.com/kassyn/monkeyjs)

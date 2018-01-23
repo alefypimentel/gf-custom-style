@@ -1,15 +1,15 @@
 === GF Custom Style ===
 Contributors: Alefy Pimentel Ferreira
-Tags: admin, custom gravity forms, custom gravity, customization, flat design, flat, GF Custom Style, beautiful style forms
+Tags: admin, gravity forms, custom gravity forms, custom gravity, customization, flat design, flat, GF Custom Style, beautiful style forms
 Tested up to: 4.7
 Stable Tag: 0.4.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
-Change the way you log on WordPress with a flat design and colors of your choice.
+Customize your gravity forms on WordPress with a flat design and colors of your choice.
 
 == Description ==
-Are you tired of the WordPress login screen? Do you want login screen like the style of your website? This is the plugin you were looking for, it does all and a little more.
+Do you want a simple and quick way to style your site's forms? If you use gravity form plugin, gf-custom-style is the best option for you to customize your form. Simple grid options and easy to create your design.
 
 == Installation ==
 1. Upload the plugin files to the `/wp-content/plugins/gf-custom-style` directory, or install the plugin through the WordPress plugins screen directly.
