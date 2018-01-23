@@ -1,8 +1,8 @@
 === GF Custom Style ===
 Contributors: Alefy Pimentel Ferreira
-Tags: admin, gravity forms, custom gravity forms, custom gravity, customization, flat design, flat, GF Custom Style, beautiful style forms
-Tested up to: 4.7
-Stable Tag: 0.4.0
+Tags: gravity forms, custom gravity forms, custom gravity, customization, flat design, flat, GF Custom Style, beautiful style forms
+Tested up to: 4.8.2
+Stable Tag: 1.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
@@ -23,16 +23,5 @@ Do you want a simple and quick way to style your site's forms? If you use gravit
 4. Config screen
 
 == Changelog ==
-
-= 0.4.0 =
-
-* Added new colors configurations
-
-= 0.3.0 =
-
-* Bug fixes
-* Code improvements
-
-= 0.2.0 =
 
 * First public version.

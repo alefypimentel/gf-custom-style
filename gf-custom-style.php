@@ -3,6 +3,7 @@
 	Plugin Name: GF Custom Style
 	Plugin URI: https://github.com/alefypimentel
 	Author: Alefy Pimentel Ferreira
+	Author URI: https://github.com/alefypimentel
 	Version: 1.0
 	Description: Customize gravity forms plugin, colors, inputs... style.
 	Text Domain: gf-custom-style
